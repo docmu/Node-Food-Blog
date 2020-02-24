@@ -1,0 +1,33 @@
+i.icon{
+	/* double size of parent */
+	font-size: 2em;
+}
+
+.container.main{
+	margin-top: 7.0em;
+}
+
+#delete{
+	display: inline;
+}
+
+.image img{
+	width: 100%;
+}
+
+.content .header{
+	font-size: 1.5rem;
+}
+
+.meta span, .content span{
+	font-weight: 700;
+}
+
+.item .image{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.description{
+	margin-bottom: 20px;
+}
