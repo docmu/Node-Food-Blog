@@ -7,7 +7,15 @@ var express        = require("express"),
 
 //APP CONFIG
 //connect to a db called restful_blog_app
-mongoose.connect("mongodb://localhost:27017/restful_blog_app", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost:27017/restful_blog_app", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://Colt:Rusty@cluster0-hchgg.mongodb.net/test?retryWrites=true&w=majority"), {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then(() => {
+	console.log("Connected to db");
+}).catch(err => {
+	console.log("ERROR: ", err.message);
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -118,6 +126,6 @@ app.delete("/blogs/:id", function(req, res){
 
 
 //tell express to listen for requests(start server)
-app.listen(3000, function() { 
-  console.log('Blog server started'); 
+app.listen(process.env.PORT || 3000, process.env.IP, (req, res) => {
+	console.log("server listening")
 });
