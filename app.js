@@ -58,7 +58,7 @@ app.get("/blogs/new", function(req,res){
 //CREATE ROUTE- send data from the form
 app.post("/blogs", function(req,res){
 	//sanitize
-	req.body.blog.body = req.sanitize();
+	req.body.blog.body = req.sanitize(req.body.blog.body);
 	//create blog
 	Blog.create(req.body.blog, function(err, newBlog){
 		if(err){
