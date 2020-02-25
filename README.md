@@ -12,7 +12,7 @@ INDEX ROUTE- display all blogs
 
 NEW ROUTE- displays a form for a new blog entry  
 CREATE ROUTE- creates new blog post  
-![Alt Text](https://github.com/docmu/RESTfulWebsite/blob/master/Screenshot%20(71).png)
+![Alt Text](https://github.com/docmu/RESTfulWebsite/blob/master/Screenshot%20(75).png)
 
 SHOW ROUTE- displays a specific blog post  
 ![Alt Text](https://github.com/docmu/RESTfulWebsite/blob/master/Screenshot%20(72).png)
