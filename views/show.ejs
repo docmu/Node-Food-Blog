@@ -1,23 +1,34 @@
 <%- include("partials/header") %>
-
-<div class="ui main container segment">
-	<div class="ui huge header"><%= blog.title %></div>
-		<div class="ui top attached">
-			<div class="item">
-				<img class="ui centered rounded image" src="<%= blog.image %>"> 
-				<div class="content">
-					<span><%= blog.created.toDateString() %></span>
-				</div>
+<div class="ui two column centered grid">
+	<div class="fourteen wide column">
+		<div class="top-section">
+			<header><%= blog.title %></header>
+			<p class="blog-date">Posted on <%= blog.created.toDateString() %></p>
+		</div>
+		<div class="ui stackable grid">
+			<div class="eight wide column">
+				<img class="ui rounded image" src="<%= blog.image %>"> 
+			</div>
+			<div class="eight wide column">
 				<div class="description">
+					<h1>
+						Description
+					</h1>
 					<p><%= blog.body %></p>
 				</div>
-				<!-- IMPORTANT: method override -->
-				<form id="delete" method="POST" action="/blogs/<%= blog._id %>?_method=DELETE">
-					<a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
-					<button class="ui red basic button">DELETE</button>
-				</form>
 			</div>
 		</div>
+
+		<!-- IMPORTANT: method override -->
+		<div class="btn-container">
+			<form id="delete" method="POST" action="/blogs/<%= blog._id %>?_method=DELETE">
+			<a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+			<button class="ui red basic button">Delete</button>
+			</form>
+		</div>
+
 	</div>
+</div>
+
 
 <%- include("partials/footer") %>
