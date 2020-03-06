@@ -6,17 +6,10 @@ const express        = require("express"),
 	  expressSanitizer = require("express-sanitizer");
 
 //APP CONFIG
-//connect to mongodb atlas
-// mongoose.connect("mongodb://localhost:27017/restful_blog_app", { useNewUrlParser: true }); //development db
-// mongoose.connect('mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majority', {
-// 	useNewUrlParser: true,
-// 	useCreateIndex: true
-// }).then(() => {
-// 	console.log("Connected to db");
-// }).catch(err => {
-// 	console.log("ERROR: ", err.message);
-// });
-var url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"; 
+// mongodb://localhost:27017/restful_blog_app //development db url
+// mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majority //mongodb atlas db url
+// var url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"; 
+var url = process.env.DATABASEURL || "mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majoritymongodb://localhost:27017/restful_blog_app"; 
 mongoose.connect(url, {useNewUrlParser: true});
 
 app.set("view engine", "ejs");
@@ -126,11 +119,6 @@ app.delete("/blogs/:id", function(req, res){
 	});
 });
 
-
-//tell express to listen for requests(start server)
 app.listen(process.env.PORT || 3000, process.env.IP, (req, res) => {
 	console.log("server listening")
 });
-// app.listen(3000, () => {
-// 	console.log('server listening on port 3000');
-// });
