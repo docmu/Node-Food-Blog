@@ -8,14 +8,16 @@ const express        = require("express"),
 //APP CONFIG
 //connect to mongodb atlas
 // mongoose.connect("mongodb://localhost:27017/restful_blog_app", { useNewUrlParser: true }); //development db
-mongoose.connect('mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majority', {
-	useNewUrlParser: true,
-	useCreateIndex: true
-}).then(() => {
-	console.log("Connected to db");
-}).catch(err => {
-	console.log("ERROR: ", err.message);
-});
+// mongoose.connect('mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majority', {
+// 	useNewUrlParser: true,
+// 	useCreateIndex: true
+// }).then(() => {
+// 	console.log("Connected to db");
+// }).catch(err => {
+// 	console.log("ERROR: ", err.message);
+// });
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"; 
+mongoose.connect(url, {useNewUrlParser: true});
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
