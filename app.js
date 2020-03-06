@@ -1,13 +1,13 @@
 const express        = require("express"),
-    app            = express(),
-    bodyParser     = require("body-parser"),
-    mongoose       = require("mongoose"),
-	methodOverride = require("method-override"),
-	expressSanitizer = require("express-sanitizer");
+      app            = express(),
+      bodyParser     = require("body-parser"),
+      mongoose       = require("mongoose"),
+	  methodOverride = require("method-override"),
+	  expressSanitizer = require("express-sanitizer");
 
 //APP CONFIG
-//connect to a db called restful_blog_app
-// mongoose.connect("mongodb://localhost:27017/restful_blog_app", { useNewUrlParser: true });
+//connect to mongodb atlas
+// mongoose.connect("mongodb://localhost:27017/restful_blog_app", { useNewUrlParser: true }); //development db
 mongoose.connect('mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majority', {
 	useNewUrlParser: true,
 	useCreateIndex: true
@@ -40,7 +40,7 @@ app.get("/", function(req, res){
 });
 //INDEX ROUTE- show all
 app.get("/blogs", function(req, res){
-	//retrieve all campgrounds from db
+	//retrieve all blogs from db
 	Blog.find({}, function(err, blogs){
 		if(err){
 			console.log("ERROR");
@@ -126,9 +126,9 @@ app.delete("/blogs/:id", function(req, res){
 
 
 //tell express to listen for requests(start server)
-// app.listen(process.env.PORT || 3000, process.env.IP, (req, res) => {
-// 	console.log("server listening")
-// });
-app.listen(3000, () => {
-	console.log('server listening on port 3000');
+app.listen(process.env.PORT || 3000, process.env.IP, (req, res) => {
+	console.log("server listening")
 });
+// app.listen(3000, () => {
+// 	console.log('server listening on port 3000');
+// });
