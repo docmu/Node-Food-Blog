@@ -9,7 +9,7 @@ const express        = require("express"),
 // mongodb://localhost:27017/restful_blog_app //development db url
 // mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majority //mongodb atlas db url
 // var url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"; 
-var url = process.env.DATABASEURL || "mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majoritymongodb://localhost:27017/restful_blog_app"; 
+const url = process.env.DATABASEURL || "mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majority"; 
 mongoose.connect(url, {useNewUrlParser: true});
 
 app.set("view engine", "ejs");
@@ -23,7 +23,9 @@ var blogSchema = new mongoose.Schema({
 	title: String,
 	image: String,
 	body: String,
-	created: {type: Date, default: Date.now}
+	created: {type: Date, default: Date.now},
+	ingredients: String,
+	directions: String
 });
 var Blog = mongoose.model("Blog", blogSchema);
 
@@ -55,9 +57,12 @@ app.get("/blogs/new", function(req,res){
 app.post("/blogs", function(req,res){
 	//sanitize
 	req.body.blog.body = req.sanitize(req.body.blog.body);
+	// req.body.blog.ingredients = req.sanitize(req.body.blog.ingredients);
+	// req.body.blog.directions = req.sanitize(req.body.blog.directions);
 	//create blog
 	Blog.create(req.body.blog, function(err, newBlog){
 		if(err){
+			console.log(err);
 			res.render("new");
 		}
 		else{
@@ -94,6 +99,8 @@ app.get("/blogs/:id/edit", function(req,res){
 app.put("/blogs/:id", function(req, res){
 	//sanitize
 	req.body.blog.body = req.sanitize(req.body.blog.body);
+	// req.body.blog.ingredients = req.sanitize(req.body.blog.ingredients);
+	// req.body.blog.directions = req.sanitize(req.body.blog.directions);
 	//find the blog by id, catch the all data
 	Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err,updatedBlog){
 		if(err){

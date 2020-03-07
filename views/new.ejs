@@ -2,7 +2,7 @@
 
 <div class="ui main container segment">
 	<div class="ui huge header">
-		NEW BLOG
+		NEW RECIPE
 	</div>
 	<form class="ui form" action="/blogs" method="POST">
 		<div class="field">
@@ -10,8 +10,12 @@
 			<input type="text" name="blog[title]" placeholder="title">
 			<label>Image</label>
 			<input type="text" name="blog[image]" placeholder="image">
-			<label>Blog Content</label>
+			<label>Description</label>
 			<textarea name="blog[body]"></textarea>
+			<label>Ingredients</label>
+			<textarea name="blog[ingredients]"></textarea>
+			<label>Directions</label>
+			<textarea name="blog[directions]"></textarea>
 		</div>
 		<input class="ui green big basic button" type="submit">
 	</form>
