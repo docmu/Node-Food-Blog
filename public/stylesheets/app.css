@@ -1,6 +1,15 @@
 p{
 	font-size: 20px;
 }
+#ingredients-list, #directions-list, #description{
+	white-space: pre-line;
+}
+#ingredients-list, #directions-list{
+	line-height: 50px;
+}
+.ui.main.container.segment{
+	margin-top: 80px;
+}
 .description{
 	margin-bottom: 20px;
 }

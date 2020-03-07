@@ -14,20 +14,17 @@
 					<h1>
 						Description
 					</h1>
-					<p><%= blog.body %></p>
+					<p id="description"><%= blog.body %></p>
 				</div>
 			</div>
 			<div class="eight wide column">
 				<div class="ui card">
 					<div class="content" id="card">
 						<div class="card-section"><h1 class="card-header"><%= blog.title %> Ingredients</h1>
-						<h4 class="meta"><i class="far fa-clock"></i> Cook Time:</h4>
-						<h4 class="meta"><i class="fas fa-utensils"></i> Yields:</h4>
+						<h4 class="meta"><i class="fas fa-utensils"></i> Yields: <%= blog.yields %></h4>
 						</div>
 						<div class="card-section ingredients">
-							
-							<p><i class="fas fa-circle"></i> <%= blog.ingredients %></p>
-							
+							<p id="ingredients-list"><%= blog.ingredients %></p>
 						</div>
 					</div>
 				</div>
@@ -37,11 +34,10 @@
 					<div class="content" id="card">
 						<div class="card-section">
 							<h1 class="card-header">Directions</h1>
-							<h4 class="meta"><i class="far fa-clock"></i> Cook Time:</h4>
-							<h4 class="meta"><i class="fas fa-utensils"></i> Yields:</h4>
+							<h4 class="meta"><i class="far fa-clock"></i> Cook Time: <%= blog.cook %></h4>
 						</div>
 						<div class="card-section directions">
-							<p><i class="fas fa-circle"></i> <%= blog.directions %></p>
+							<p id="directions-list"><%= blog.directions %></p>
 						</div>
 					</div>
 				</div>

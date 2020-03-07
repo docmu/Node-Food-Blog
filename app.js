@@ -25,7 +25,9 @@ var blogSchema = new mongoose.Schema({
 	body: String,
 	created: {type: Date, default: Date.now},
 	ingredients: String,
-	directions: String
+	directions: String,
+	yields: String,
+	cook: String
 });
 var Blog = mongoose.model("Blog", blogSchema);
 
@@ -57,8 +59,8 @@ app.get("/blogs/new", function(req,res){
 app.post("/blogs", function(req,res){
 	//sanitize
 	req.body.blog.body = req.sanitize(req.body.blog.body);
-	// req.body.blog.ingredients = req.sanitize(req.body.blog.ingredients);
-	// req.body.blog.directions = req.sanitize(req.body.blog.directions);
+	req.body.blog.ingredients = req.sanitize(req.body.blog.ingredients);
+	req.body.blog.directions = req.sanitize(req.body.blog.directions);
 	//create blog
 	Blog.create(req.body.blog, function(err, newBlog){
 		if(err){
@@ -99,8 +101,8 @@ app.get("/blogs/:id/edit", function(req,res){
 app.put("/blogs/:id", function(req, res){
 	//sanitize
 	req.body.blog.body = req.sanitize(req.body.blog.body);
-	// req.body.blog.ingredients = req.sanitize(req.body.blog.ingredients);
-	// req.body.blog.directions = req.sanitize(req.body.blog.directions);
+	req.body.blog.ingredients = req.sanitize(req.body.blog.ingredients);
+	req.body.blog.directions = req.sanitize(req.body.blog.directions);
 	//find the blog by id, catch the all data
 	Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err,updatedBlog){
 		if(err){

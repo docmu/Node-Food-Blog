@@ -9,8 +9,12 @@
 			<input type="text" name="blog[title]" value="<%= blog.title %>">
 			<label>Image</label>
 			<input type="text" name="blog[image]" value="<%= blog.image %>">
-			<label>Blog Content</label>
+			<label>Description</label>
 			<textarea name="blog[body]"><%= blog.body %></textarea>
+			<label>Ingredients</label>
+			<textarea name="blog[ingredients]"><%= blog.ingredients %></textarea>
+			<label>Directions</label>
+			<textarea name="blog[directions]"><%= blog.directions %></textarea>
 		</div>
 		<input class="ui green big basic button" type="submit">
 	</form>
