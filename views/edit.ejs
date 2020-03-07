@@ -7,6 +7,16 @@
 		<div class="field">
 			<label>Title</label>
 			<input type="text" name="blog[title]" value="<%= blog.title %>">
+			<label>Yields</label>
+			<div class="ui left icon input">
+			  <input type="text" name="blog[yields]" value="<%= blog.yields %>">
+			  <i class="pie chart basic icon"></i>
+			</div>
+			<label>Cook Time</label>
+			<div class="ui left icon input">
+			  <input type="text" name="blog[cook]" value="<%= blog.cook %>">
+			  <i class="time basic icon"></i>
+			</div>
 			<label>Image</label>
 			<input type="text" name="blog[image]" value="<%= blog.image %>">
 			<label>Description</label>

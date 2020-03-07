@@ -49,13 +49,11 @@ p{
 	font-weight: bold;
 }
 
+/* image zoom */
 a{
 	overflow: hidden;
 }
-
-/* image zoom */
 a img{
-	/* position: absolute; */
 	overflow: hidden;
     top: 0;
     left: 0;
@@ -66,7 +64,7 @@ a img{
     transform: scale(1);
 }
 a:hover img{
-  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.1);
 }
 
 .four.wide.column{
@@ -105,10 +103,6 @@ a:hover img{
 }
 .card-section{
 	padding-bottom: 20px;
-}
-.fa-circle{
-	font-size: 50%;
-	vertical-align: middle;
 }
 #card{
 	padding: 30px;
