@@ -1,7 +1,8 @@
 # RESTfulWebsite
 ## Description 
 This website was created using Node.js and Express. The Mongoose library is used for data persistence. It utilizes the principles of 
-RESTful routing to get pages, add blogs, delete blogs, and edit blogs.
+RESTful routing to get pages, add blogs, delete blogs, and edit blogs.  
+Live website: https://blooming-retreat-23153.herokuapp.com/blogs
 
 ## Code Samples
 Mongoose Schema for Blogs  
