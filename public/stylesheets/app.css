@@ -1,11 +1,14 @@
 p{
 	font-size: 20px;
 }
+h1{
+	font-family: 'Playfair Display', serif;
+}
 #ingredients-list, #directions-list, #description{
 	white-space: pre-line;
 }
 #ingredients-list, #directions-list{
-	line-height: 50px;
+	line-height: 40px;
 }
 .ui.main.container.segment{
 	margin-top: 80px;
@@ -18,35 +21,37 @@ p{
 }
 .inverted.menu a{
 	padding: 0 15px;
-	color: #ff6eb4;
+	color: rgb(254, 112, 149);
 	line-height: 5rem;
 }
 .inverted.menu .tab:hover{
-	color: #49def5;
+	color: rgb(44, 193, 192);
 }
-
-.inverted.menu .logo{
-	color: #ff6eb4;
-}
-.inverted.menu .logo span{
-	color: #49def5;
-}
-
 .inverted.menu a.logo{
-	font-weight: 700;
-	font-size: 1.5rem;
+	/* font-weight: 700; */
+	font-size: 1.9rem;
 	letter-spacing: 1.5;
 	margin-left: 66px;
+	color: rgb(254, 112, 149);
+	font-style: italic;
+	letter-spacing: 1.5;
+}
+.inverted.menu .logo span{
+	color: rgb(44, 193, 192);
 }
 .content{
-	/* text-align:center; */
 	padding-top: 8px;
 }
 
 .title{
-	color:black;
+	font-family: 'Playfair Display', serif;
+	color: rgb(44, 193, 192);
 	font-size: 20px;
 	font-weight: bold;
+	letter-spacing:1.2;
+}
+.title:hover{
+	color: rgb(254, 112, 149);
 }
 
 /* image zoom */
@@ -71,19 +76,24 @@ a:hover img{
 	text-align: center;
 }
 
-.title:hover{
-	color: #49def5;
-}
 .top-section{
 	padding: 100px 0;
 }
 .top-section header{
 	font-size: 50px;
 	line-height: 50px;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	padding-bottom: 20px;
+}
+.top-section p{
+	color: rgb(137, 137, 137);
+	font-style: italic;
+	font-family: 'Playfair Display', serif;
 }
 .blog-date{
-	padding:20px 0;
-	font-size: 20px;
+	padding:15px 0;
+	font-size: 15px;
 }
 .btn-container{
 	padding: 20px 0;
