@@ -59,6 +59,8 @@ app.post("/blogs", function(req,res){
 	req.body.blog.body = req.sanitize(req.body.blog.body);
 	req.body.blog.ingredients = req.sanitize(req.body.blog.ingredients);
 	req.body.blog.directions = req.sanitize(req.body.blog.directions);
+	req.body.blog.yields = req.sanitize(req.body.blog.yields);
+	req.body.blog.cook = req.sanitize(req.body.blog.cook);
 	//create blog
 	Blog.create(req.body.blog, function(err, newBlog){
 		if(err){
@@ -101,6 +103,8 @@ app.put("/blogs/:id", function(req, res){
 	req.body.blog.body = req.sanitize(req.body.blog.body);
 	req.body.blog.ingredients = req.sanitize(req.body.blog.ingredients);
 	req.body.blog.directions = req.sanitize(req.body.blog.directions);
+	req.body.blog.yields = req.sanitize(req.body.blog.yields);
+	req.body.blog.cook = req.sanitize(req.body.blog.cook);
 	//find the blog by id, catch the all data
 	Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err,updatedBlog){
 		if(err){
