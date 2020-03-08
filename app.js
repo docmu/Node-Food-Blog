@@ -6,9 +6,7 @@ const express        = require("express"),
 	  expressSanitizer = require("express-sanitizer");
 
 //APP CONFIG
-// mongodb://localhost:27017/restful_blog_app //development db url
-// mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majority //mongodb atlas db url
-// var url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"; 
+// const url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"; 
 const url = process.env.DATABASEURL || "mongodb+srv://docm:z1s6FPzZxmQOVWUW@cluster0-q98om.mongodb.net/test?retryWrites=true&w=majority"; 
 mongoose.connect(url, {useNewUrlParser: true});
 
