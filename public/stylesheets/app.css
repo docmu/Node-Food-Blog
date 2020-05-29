@@ -116,6 +116,9 @@ a:hover img{
 .card-section{
 	padding-bottom: 20px;
 }
+.ui.main.container.segment{
+	border: 25px solid #ff7391;
+}
 #card{
 	padding: 30px;
 }
