@@ -1,10 +1,11 @@
 <%- include("partials/header") %>
 <div class="ui two column centered grid">
-	<div class="fourteen wide column">
-		<div class="top-section">
+	<div class="top-section">
 			<header><%= blog.title %></header>
 			<p class="blog-date">Posted on <%= blog.created.toDateString() %></p>
-		</div>
+	</div>
+	<div class="fourteen wide column">
+		
 		<div class="ui stackable grid">
 			<div class="eight wide column">
 				<img class="ui rounded image" src="<%= blog.image %>"> 
