@@ -5,13 +5,7 @@ p{
 	font-size: 20px;
 }
 h1{
-	font-family: 'Playfair Display', serif;
-}
-#ingredients-list, #directions-list, #description{
-	white-space: pre-line;
-}
-#ingredients-list, #directions-list{
-	line-height: 40px;
+	font-family: 'Cabin', sans-serif;
 }
 .ui.main.container.segment{
 	margin-top: 80px;
@@ -28,9 +22,11 @@ h1{
 	line-height: 5rem;
 	text-align: center;
 	font-weight: bold;
+	letter-spacing: 1;
 }
 .inverted.menu .tab:hover{
 	color: rgb(254, 112, 149);
+	border-bottom: 4px solid rgb(254, 112, 149);
 }
 
 .content{
@@ -38,12 +34,12 @@ h1{
 }
 
 .title{
-	font-family: 'Playfair Display', serif;
+	font-family: 'Cabin', sans-serif;
 	color: black;
 	font-size: 20px;
-	font-weight: bold;
+	font-weight: 700;
 	letter-spacing:1.2;
-	/* text-shadow: 5px 10px 18px #888888; */
+	text-transform: uppercase;
 }
 .title:hover{
 	color: rgb(254, 112, 149);
@@ -74,7 +70,7 @@ a:hover img{
 .top-section{
 	padding: 250px 0;
 	width: 100%;
-	background: url(https://images.pexels.com/photos/1040685/pexels-photo-1040685.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+	background: url(backgroundImage.jpeg);
 	text-align: center;
 	margin-left: 0px;
 	margin-right: 0px;
@@ -86,7 +82,6 @@ a:hover img{
 	line-height: 100px;
 	letter-spacing: 2px;
 	font-family: 'Lobster', cursive;
-	/* padding-bottom: 20px; */
 	color: white;
 	text-shadow: 6px 1px 9px black;
 }
@@ -118,6 +113,12 @@ a:hover img{
 }
 .ui.main.container.segment{
 	border: 25px solid #ff7391;
+}
+#ingredients-list, #directions-list, #description{
+	white-space: pre-line;
+}
+#ingredients-list, #directions-list{
+	line-height: 40px;
 }
 #card{
 	padding: 30px;

@@ -1,9 +1,10 @@
-const express        = require("express"),
-      app            = express(),
-      bodyParser     = require("body-parser"),
-      mongoose       = require("mongoose"),
-	  methodOverride = require("method-override"),
-	  expressSanitizer = require("express-sanitizer");
+const express          = require("express"),
+      app              = express(),
+      bodyParser       = require("body-parser"),
+      mongoose         = require("mongoose"),
+	  methodOverride   = require("method-override"),
+	  expressSanitizer = require("express-sanitizer"),
+	  nodemailer       = require("nodemailer");
 
 //APP CONFIG
 // const url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"; 
@@ -28,6 +29,12 @@ var blogSchema = new mongoose.Schema({
 	cook: String
 });
 var Blog = mongoose.model("Blog", blogSchema);
+
+var contactSchema = new mongoose.Schema({
+	email: String,
+	message: String
+});
+var Contact = mongoose.model("Contact", contactSchema);
 
 
 //RESTFUL ROUTES
@@ -126,6 +133,26 @@ app.delete("/blogs/:id", function(req, res){
 		}
 		else{
 			res.redirect("/blogs");
+		}
+	});
+});
+
+//CONTACT ME ROUTES
+app.get("/contact", function(req, res){
+	res.render("contact");
+});
+app.post("/send", (req, res) => {
+	req.body.contact.email = req.sanitize(req.body.contact.email);
+	req.body.contact.message = req.sanitize(req.body.contact.message);
+	Contact.create(req.body.contact, function(err, newContact){
+		if(err){
+			console.log(err);
+			res.render("contact");
+		}
+		else{
+			//then redirect to the index
+			res.redirect("/blogs");
+			console.log(req.body.contact);
 		}
 	});
 });

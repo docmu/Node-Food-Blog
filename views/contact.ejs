@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+
+<!-- <div class="ui main container segment" style="color: pink;">
+	
+</div> -->
+<div class="ui main container segment">
+	<div class="ui huge header">
+		<h1>Send me a message</h1>
+	</div>
+	<form class="ui form" action="/send" method="POST">
+		<input type="text" name="contact[email]" placeholder="Email@gmail.com">
+		<div class="field">
+			<textarea name="contact[message]"></textarea>
+		</div>
+		<input class="ui green big basic button" type="submit">
+	</form>
+</div>
+
+
+<%- include("partials/footer") %>
