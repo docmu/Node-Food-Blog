@@ -138,7 +138,7 @@ app.delete("/blogs/:id", function(req, res){
 });
 
 //CONTACT ME ROUTES
-app.get("/contact", function(req, res){
+app.get("/contact", (req, res) =>{
 	res.render("contact");
 });
 app.post("/send", (req, res) => {
@@ -155,6 +155,51 @@ app.post("/send", (req, res) => {
 			console.log(req.body.contact);
 		}
 	});
+	
+	// the message to send through nodemailer
+	const output = `
+        <h3>Email</h3>
+		<p>${req.body.contact.email}</p>
+		<h3>Message</h3>
+		<p>${req.body.contact.message}</p>
+  `;
+	
+  // the auth credentials below is a test account
+  // Create a new account each time testing nodemailer funtionality
+  // Generate test SMTP service account from ethereal.email
+	
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+        user: 'creola.abernathy29@ethereal.email', // generated ethereal user
+        pass: 'jqmSbhbBQ13FvwZAEz'  // generated ethereal password
+    },
+    tls:{
+      rejectUnauthorized:false
+    }
+  });
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+      from: '"Nodemailer Contact" <creola.abernathy29@ethereal.email>', // sender address
+      to: 'ctintin123@gmail.com', // list of receivers
+      subject: 'Node Contact Request', // Subject line
+      html: output // html body
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);   
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+  });	
+	
+  
 });
 
 app.listen(process.env.PORT || 3000, process.env.IP, (req, res) => {
