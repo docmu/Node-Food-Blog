@@ -1,33 +1,26 @@
 <%- include("partials/header") %>
 
-<div class="ui main container segment">
+<div class="ui main container segment" id="newRecipeDiv">
 	<div class="ui huge header">
 		New Recipe
 	</div>
 	<form class="ui form" action="/blogs" method="POST">
 		<div class="field">
-			<label>Title</label>
-			<input type="text" name="blog[title]" placeholder="title">
-			<label>Yields</label>
+			<input type="text" name="blog[title]" placeholder="Recipe name">
+			<input type="text" name="blog[image]" placeholder="Image url">
 			<div class="ui left icon input">
-			  <input type="text" name="blog[yields]" placeholder="number of servings">
+			  <input type="text" name="blog[yields]" placeholder="Number of servings">
 			  <i class="pie chart basic icon"></i>
 			</div>
-			<label>Cook Time</label>
 			<div class="ui left icon input">
-			  <input type="text" name="blog[cook]" placeholder="cook time">
+			  <input type="text" name="blog[cook]" placeholder="Cook time">
 			  <i class="time basic icon"></i>
 			</div>
-			<label>Image</label>
-			<input type="text" name="blog[image]" placeholder="image url">
-			<label>Description</label>
-			<textarea name="blog[body]"></textarea>
-			<label>Ingredients</label>
-			<textarea name="blog[ingredients]"></textarea>
-			<label>Directions</label>
-			<textarea name="blog[directions]"></textarea>
+			<textarea name="blog[body]" placeholder="Desciption"></textarea>
+			<textarea name="blog[ingredients]" placeholder="Ingredients"></textarea>
+			<textarea name="blog[directions]" placeholder="Directions"></textarea>
 		</div>
-		<input class="ui green big basic button" type="submit">
+		<input class="ui big basic button" type="submit">
 	</form>
 </div>
 

@@ -112,7 +112,22 @@ a:hover img{
 	padding-bottom: 20px;
 }
 .ui.main.container.segment{
-	border: 25px solid #ff7391;
+	/* border: 25px solid #ff7391; */
+	border: none;
+}
+.ui.form input[type=text], .ui.form textarea{
+	margin-bottom: 10px;
+	line-height: 2;
+}
+.ui.form input[type=text]:focus, .ui.form textarea:focus{
+	color: #ff7391;
+}
+.ui.huge.header{
+	text-align: center;
+}
+.ui.basic.button, .ui.basic.buttons .button{
+	box-shadow: 0 0 0 1px #ff7391 inset;
+    color: #ff7391 !important;
 }
 #ingredients-list, #directions-list, #description{
 	white-space: pre-line;
@@ -121,8 +136,16 @@ a:hover img{
 	line-height: 40px;
 }
 #card{
-	padding: 30px;
+	padding: 50px;
 }
 #delete{
 	display: inline;
+}
+#contactDiv{
+	padding: 3% 6%;
+	border-top: 10px solid #ff7391;
+}
+#newRecipeDiv{
+	padding: 2% 5%;
+	border-top: 10px solid #ff7391;
 }
