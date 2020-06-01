@@ -31,6 +31,7 @@ var blogSchema = new mongoose.Schema({
 var Blog = mongoose.model("Blog", blogSchema);
 
 var contactSchema = new mongoose.Schema({
+	name: String,
 	email: String,
 	message: String
 });
@@ -142,6 +143,7 @@ app.get("/contact", (req, res) =>{
 	res.render("contact");
 });
 app.post("/send", (req, res) => {
+	req.body.contact.name = req.sanitize(req.body.contact.name);
 	req.body.contact.email = req.sanitize(req.body.contact.email);
 	req.body.contact.message = req.sanitize(req.body.contact.message);
 	Contact.create(req.body.contact, function(err, newContact){
@@ -158,6 +160,8 @@ app.post("/send", (req, res) => {
 	
 	// the message to send through nodemailer
 	const output = `
+		<h3>Name</h3>
+		<p>${req.body.contact.name}</p>
         <h3>Email</h3>
 		<p>${req.body.contact.email}</p>
 		<h3>Message</h3>
@@ -165,7 +169,7 @@ app.post("/send", (req, res) => {
   `;
 	
   // the auth credentials below is a test account
-  // Create a new account each time testing nodemailer funtionality
+  // Create a new account to test nodemailer funtionality
   // Generate test SMTP service account from ethereal.email
 	
   // create reusable transporter object using the default SMTP transport
