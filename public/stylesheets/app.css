@@ -6,6 +6,8 @@ p{
 }
 h1{
 	font-family: 'Cabin', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1.5;
 }
 .ui.main.container.segment{
 	margin-top: 80px;
@@ -124,6 +126,7 @@ a:hover img{
 }
 .ui.huge.header{
 	text-align: center;
+	letter-spacing: 1.5;
 }
 .ui.basic.button, .ui.basic.buttons .button{
 	box-shadow: 0 0 0 1px #ff7391 inset;
@@ -145,7 +148,7 @@ a:hover img{
 	padding: 3% 6%;
 	border-top: 10px solid #ff7391;
 }
-#newRecipeDiv{
+#newRecipeDiv, #editDiv{
 	padding: 2% 5%;
 	border-top: 10px solid #ff7391;
 }
