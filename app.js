@@ -168,9 +168,8 @@ app.post("/send", (req, res) => {
 		<p>${req.body.contact.message}</p>
   `;
 	
-  // the auth credentials below is a test account
-  // Create a new account to test nodemailer funtionality
-  // Generate test SMTP service account from ethereal.email
+  // the auth credentials below is a test account from ethereal.email
+  // once a message is sent, a preview url will be logged in the terminal
 	
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
@@ -199,7 +198,7 @@ app.post("/send", (req, res) => {
       if (error) {
           return console.log(error);
       }
-      console.log('Message sent: %s', info.messageId);   
+      console.log('Message sent: %s', info.messageId);    
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
   });	
 	
