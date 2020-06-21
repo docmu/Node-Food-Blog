@@ -27,4 +27,4 @@ page. The website is deployed through Heroku.
 ![Alt Text](https://github.com/docmu/RESTfulWebsite/blob/master/Screenshot%20(74).png)
 
 #### Implementation of Nodemailer
-![Alt Text] (https://github.com/docmu/RESTfulWebsite/blob/master/Screenshot%20(131)_LI.jpg)
+![Alt Text](https://github.com/docmu/RESTfulWebsite/blob/master/Screenshot%20(131)_LI.jpg)
