@@ -1,5 +1,6 @@
 body{
-	background-color: #f4f4f4;
+	background-color: #f2f2f2;
+	/* background-color: #f4f4f4; */
 }
 p{
 	font-size: 20px;
@@ -147,8 +148,11 @@ a:hover img{
 #contactDiv{
 	padding: 3% 6%;
 	border-top: 10px solid #ff7391;
+	border-bottom: 10px solid #ff7391;
 }
 #newRecipeDiv, #editDiv{
+	margin-bottom: 30px;
 	padding: 2% 5%;
 	border-top: 10px solid #ff7391;
+	border-bottom: 10px solid #ff7391;
 }
