@@ -1,8 +1,8 @@
 # RESTfulWebsite
 ## Description 
 This website was created using Node.js and Express. Data persistence is supported by MongoDB Atlas. It utilizes the principles of 
-RESTful routing to render pages, add blogs, delete blogs, and edit blogs. Nodemailer is also used for sending emails through the contact
-page. The website is deployed through Heroku.
+RESTful routing to render pages, add blogs, delete blogs, and edit blogs. Semantic UI is used for css styling. Nodemailer is also used for sending emails through the contact
+page. This website is deployed through Heroku.
 #### Live website: https://blooming-retreat-23153.herokuapp.com/blogs
 
 ## Code Samples
